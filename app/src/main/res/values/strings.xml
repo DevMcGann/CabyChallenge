@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CabyfiChallenge</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="product_name">Product Name</string>
+    <string name="_25000">$ 25000</string>
+    <string name="addbutton">AddButton</string>
+    <string name="tshirt">TSHIRT</string>
+    <string name="gotocartbutton">GoToCartButton</string>
+    <string name="voucher">VOUCHER</string>
+    <string name="_150">150</string>
+    <string name="_38_00">$ 38.00</string>
+    <string name="you_have_a_discount_on_this_item">You have a discount on this Item!</string>
+    <string name="unit_price_20">Unit Price: 20</string>
+    <string name="kotlin_tshirt">Kotlin Tshirt</string>
+</resources>

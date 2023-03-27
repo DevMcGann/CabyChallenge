@@ -31,7 +31,10 @@ fun CalculatePrice(list:List<CartItemCount>) : List<CartItemCount> {
                         }
                     }
                 }
+                else -> { product.price = product.price * product.quantity}
             }
+        }else{
+            product.price = product.price * product.quantity
         }
     }
 

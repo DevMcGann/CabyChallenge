@@ -8,6 +8,7 @@ interface ProductApi {
     @GET("Products.json")
      suspend fun getProducts() : ProductsResponse
 
+     //This is only for mocking purposes
     @GET("Products.json")
      suspend fun simulateCheckout(): PaymentResponse
 

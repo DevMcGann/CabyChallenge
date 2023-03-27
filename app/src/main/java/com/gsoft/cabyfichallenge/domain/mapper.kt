@@ -22,7 +22,8 @@ object ProductMapper {
             price = newProduct.price,
             discountType = newProduct.discountType,
             discountPercentaje = newProduct.discountPercentaje,
-            minQuantity = newProduct.minQuantity
+            minQuantity = newProduct.minQuantity,
+            promoString = newProduct.promoString
         )
     }
 

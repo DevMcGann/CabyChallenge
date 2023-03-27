@@ -10,7 +10,8 @@ data class Product(
     val price: Double,
     var discountType : String? = null,
     var discountPercentaje : Double? = null,
-    var minQuantity:Int? = null
+    var minQuantity:Int? = null,
+    var promoString : String? = null
 )
 
 //Ok... This is kinda ugly yes,  but i think that this kind of
@@ -22,11 +23,13 @@ fun Product.addFields() : Product{
                 discountType = "50%"
                 discountPercentaje = 0.5
                 minQuantity = 2
+                promoString = "50% discount every $minQuantity units"
             }
            "TSHIRT" -> {
                discountType = "BULK"
                discountPercentaje = 0.05
                minQuantity = 3
+               promoString = "-1$ discount on more than $minQuantity units"
            }
         else -> {
             discountType = null

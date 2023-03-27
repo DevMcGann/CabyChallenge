@@ -7,7 +7,8 @@
     android:layout_marginEnd="401dp"
     android:layout_marginBottom="3dp"
     android:layout_weight="1"
-    android:padding="10dp"
+    android:background="@color/darkLavender"
+    android:backgroundTint="@color/darkLavender"
     app:cardCornerRadius="20dp"
     app:cardElevation="45dp"
     app:layout_constraintBottom_toTopOf="@+id/itemText"
@@ -17,91 +18,99 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="1dp">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:weightSum="6">
 
-
-        <TextView
-            android:id="@+id/itemText"
-            android:layout_width="220dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="11dp"
-            android:text="@string/product_name"
-            android:textAlignment="textStart"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/tCode"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/itemPrice"
-            android:layout_width="119dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/_25000"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tCode"
-            app:layout_constraintTop_toBottomOf="@+id/tCode"
-            app:layout_constraintVertical_bias="0.85" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/bAddCart"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="8dp"
-            android:clickable="true"
-            android:contentDescription="@string/addbutton"
-            android:focusable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.86"
-            app:srcCompat="@drawable/ic_add_cart" />
-
-        <TextView
-            android:id="@+id/tCode"
-            android:layout_width="151dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="25dp"
-            android:text="@string/tshirt"
-            android:textAlignment="textStart"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/itemPrice"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/itemText"
-            app:layout_constraintTop_toBottomOf="@+id/itemText" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="0dp"
-            android:scaleType="fitCenter"
+        <LinearLayout
+            android:id="@+id/imageLayout"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/cabify"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/itemText"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars"
-            android:contentDescription="@string/product_image" />
+            android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/product_image"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cabify"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            >
+
+
+            <TextView
+                android:id="@+id/itemText"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/product_name"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tCode"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/tshirt"
+                android:textAlignment="textStart"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/itemText"
+                app:layout_constraintTop_toBottomOf="@+id/itemText" />
+
+            <TextView
+                android:id="@+id/itemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="28dp"
+                android:text="@string/_25000"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/itemText"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tCode" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/bAddCart"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:layout_marginEnd="2dp"
+                android:clickable="true"
+                android:contentDescription="@string/addbutton"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.786"
+                app:srcCompat="@drawable/ic_add_cart" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
 </androidx.cardview.widget.CardView>

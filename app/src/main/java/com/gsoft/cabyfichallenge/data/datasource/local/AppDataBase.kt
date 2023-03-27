@@ -9,7 +9,7 @@ import com.gsoft.cabyfichallenge.domain.entity.CartItemDB
 
 @TypeConverters(typeConverter::class)
 @Database(entities = [CartItemDB::class],
-    version = 3, exportSchema = false)
+    version = 4, exportSchema = false)
 
 abstract class AppDataBase: RoomDatabase() {
     abstract fun cartitemDao(): CartItemDao

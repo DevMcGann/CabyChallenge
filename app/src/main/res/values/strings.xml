@@ -20,5 +20,7 @@
     <string name="x_120">X 120</string>
     <string name="product_image">product image</string>
     <string name="delete">Delete</string>
+    <string name="buy_items">Buy Items</string>
+    <string name="total_100">$ 100</string>
 
 </resources>

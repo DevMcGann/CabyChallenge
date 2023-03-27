@@ -15,5 +15,6 @@ data class CartItemCount(
     val quantity: Int = 0,
     val discountType:String? = null,
     val discountPercentaje : Double? = null,
+    val promoString : String? = null,
     val minQuantity : Int? = null
 )

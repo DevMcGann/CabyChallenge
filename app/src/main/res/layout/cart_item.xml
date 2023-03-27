@@ -7,168 +7,160 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:layout_marginBottom="5dp"
-    android:layout_weight="1"
-    android:padding="3dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="45dp"
-    app:layout_constraintBottom_toTopOf="@+id/itemText"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    >
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/mainContrain"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mainParent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:orientation="horizontal"
+        android:weightSum="6">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/leftConstrain"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/leftContainer"
+            android:minWidth="120dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/rightConstrain"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/black"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/tQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:text="@string/x_120"
                 android:textAlignment="center"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tCartCode" />
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                />
 
             <TextView
                 android:id="@+id/tCartCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                android:textColor="@color/white"
                 android:text="@string/voucher"
                 android:textAlignment="center"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tQuantity"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginBottom="30dp"
+                />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rightConstrain"
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/rightContainer"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/leftConstrain"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical"
+            android:layout_weight="5">
 
-
-            <TextView
-                android:id="@+id/tName"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="@string/kotlin_tshirt"
-                android:textAlignment="center"
-                android:singleLine="true"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.504"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.042" />
+                android:layout_height="match_parent">
 
 
-            <TextView
-                android:id="@+id/tSubTotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:layout_marginBottom="4dp"
-                android:text="@string/_38_00"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.082"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tDiscountString" />
+                <TextView
+                    android:id="@+id/tName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:singleLine="true"
+                    android:text="@string/kotlin_tshirt"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.017"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tDiscountString"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="60dp"
-                android:ellipsize="none"
-                android:gravity="center"
-                android:singleLine="false"
-                android:text="@string/you_have_a_discount_on_this_item"
-                android:textAlignment="center"
-                android:textColor="@color/teal_700"
-                android:textSize="18sp"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tUnitPrice" />
+                <TextView
+                    android:id="@+id/tUnitPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/unit_price_20"
+                    app:layout_constraintBottom_toBottomOf="@+id/tName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.666"
+                    app:layout_constraintStart_toEndOf="@+id/tName"
+                    app:layout_constraintTop_toTopOf="@+id/tName"
+                    app:layout_constraintVertical_bias="1.0" />
 
-            <TextView
-                android:id="@+id/tUnitPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:singleLine="true"
-                android:text="@string/unit_price_20"
-                app:layout_constraintEnd_toEndOf="@+id/tName"
-                app:layout_constraintStart_toStartOf="@+id/tName"
-                app:layout_constraintTop_toBottomOf="@+id/tName" />
+                <TextView
+                    android:id="@+id/tSubTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/_38_00"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/bDelete"
+                    app:layout_constraintEnd_toStartOf="@+id/bDelete"
+                    app:layout_constraintHorizontal_bias="0.022"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bDelete" />
 
-            <TextView
-                android:id="@+id/bDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/delete"
-                android:textAlignment="center"
-                android:textColor="#EC0707"
-                android:singleLine="true"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/tSubTotal" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tDiscountString"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="none"
+                        android:gravity="center"
+                        android:singleLine="false"
+                        android:layout_gravity="center"
+                        android:text="@string/you_have_a_discount_on_this_item"
+                        android:textAlignment="center"
+                        android:textColor="@color/red"
+                        android:textSize="16sp"
+                        android:visibility="visible"
+                        tools:layout_editor_absoluteX="26dp"
+                        tools:layout_editor_absoluteY="83dp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:id="@+id/bDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="40dp"
+                    android:singleLine="true"
+                    android:text="@string/delete"
+                    android:textAlignment="center"
+                    android:textColor="#EC0707"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 </androidx.cardview.widget.CardView>

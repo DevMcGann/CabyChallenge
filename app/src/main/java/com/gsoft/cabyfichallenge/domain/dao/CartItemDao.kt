@@ -45,7 +45,7 @@ interface CartItemDao {
     suspend fun deleteAllCartItems()
 
     @Query("""
-        SELECT id, price, name, code, minQuantity, discountPercentaje, discountType, count(code) as 'quantity', price as 'originalPrice'
+        SELECT id, price, name, code, minQuantity, discountPercentaje,promoString, discountType, count(code) as 'quantity', price as 'originalPrice'
         FROM 'CartItem'
         GROUP by code
         """)

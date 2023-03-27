@@ -13,4 +13,12 @@
     <string name="you_have_a_discount_on_this_item">You have a discount on this Item!</string>
     <string name="unit_price_20">Unit Price: 20</string>
     <string name="kotlin_tshirt">Kotlin Tshirt</string>
+    <string name="payment_success">Payment done successfully</string>
+    <string name="total_amount">TOTAL $%1$s€</string>
+    <string name="error_adding_to_cart">There was an Error adding Item to the Cart</string>
+    <string name="deleteitembutton">deleteItemButton</string>
+    <string name="x_120">X 120</string>
+    <string name="product_image">product image</string>
+    <string name="delete">Delete</string>
+
 </resources>

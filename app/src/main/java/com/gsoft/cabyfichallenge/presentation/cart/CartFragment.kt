@@ -1,14 +1,13 @@
 package com.gsoft.cabyfichallenge.presentation.cart
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.core.view.isGone
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.gsoft.cabyfichallenge.R
 import com.gsoft.cabyfichallenge.databinding.FragmentCartBinding
 import com.gsoft.cabyfichallenge.presentation.cart.adapter.CartAdapter
 import com.gsoft.cabyfichallenge.util.Resource
@@ -17,7 +16,7 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class CartFragment : Fragment(R.layout.fragment_cart) {
+class CartFragment : Fragment(com.gsoft.cabyfichallenge.R.layout.fragment_cart) {
 
     @Inject
     lateinit var cartAdapter: CartAdapter
@@ -49,7 +48,7 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         }
     }
 
-    private fun observe(){
+    private fun observe() {
         observeProducts()
         observeState()
         observePrice()
@@ -57,41 +56,47 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
     }
 
     private fun observeState() {
-        viewModel.isLoading.observe(viewLifecycleOwner){value ->
+        viewModel.isLoading.observe(viewLifecycleOwner) { value ->
             binding.cartLoading.isVisible = value == true
         }
-        viewModel.isError.observe(viewLifecycleOwner){ it ->
-            if(it){
-                view?.let { viewModel.errorMessage.value?.let { it1 ->
-                    Snackbar.make(requireView(),
-                        it1, Snackbar.LENGTH_LONG).show()
-                } }
+        viewModel.isError.observe(viewLifecycleOwner) { it ->
+            if (it) {
+                view?.let {
+                    viewModel.errorMessage.value?.let { it1 ->
+                        Snackbar.make(
+                            requireView(),
+                            it1, Snackbar.LENGTH_LONG
+                        ).show()
+                    }
+                }
             }
         }
     }
 
+    @SuppressLint("StringFormatMatches")
     private fun observePrice() {
-        viewModel.totalPrice.observe(viewLifecycleOwner){ value ->
-           binding.tTotal.text = "TOTAL $${value}€"
+        viewModel.totalPrice.observe(viewLifecycleOwner) { value ->
+            val totalAmount = getString(com.gsoft.cabyfichallenge.R.string.total_amount, value)
+            binding.tTotal.text = totalAmount
         }
     }
 
-    private fun fetchProducts(){
+    private fun fetchProducts() {
         viewModel.fetchProducts()
     }
 
 
-    private fun observeProducts(){
+    private fun observeProducts() {
         viewModel.cart.observe(viewLifecycleOwner) { cart ->
-            if(!cart.isNullOrEmpty()){
+            if (!cart.isNullOrEmpty()) {
                 cartAdapter.submitList(cart)
-            }else{
+            } else {
                 cartAdapter.submitList(emptyList())
             }
         }
     }
 
-    private fun observePayment(){
+    private fun observePayment() {
         viewModel.payment.observe(viewLifecycleOwner) { resource ->
             when (resource) {
                 is Resource.Loading -> {
@@ -100,19 +105,31 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
                 is Resource.Success -> {
                     handleLoading(false)
                     viewModel.wipeCart()
-                    view?.let { Snackbar.make(it, "Payment done successfully", Snackbar.LENGTH_SHORT) }?.show()
+                    view?.let {
+                        Snackbar.make(
+                            it,
+                            com.gsoft.cabyfichallenge.R.string.payment_success,
+                            Snackbar.LENGTH_SHORT
+                        )
+                    }?.show()
                 }
                 is Resource.Failure -> {
                     handleLoading(false)
                     val exception = resource.exception
-                    view?.let { Snackbar.make(it, exception.message.toString(), Snackbar.LENGTH_SHORT) }?.show()
+                    view?.let {
+                        Snackbar.make(
+                            it,
+                            exception.message.toString(),
+                            Snackbar.LENGTH_SHORT
+                        )
+                    }?.show()
 
                 }
             }
         }
     }
 
-    private fun handleLoading(isLoading: Boolean){
+    private fun handleLoading(isLoading: Boolean) {
         binding.cartLoading.isVisible = isLoading
     }
 
@@ -121,8 +138,6 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         super.onDestroyView()
         _binding = null
     }
-
-
 
 
 }

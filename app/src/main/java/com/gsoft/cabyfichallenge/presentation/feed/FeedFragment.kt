@@ -67,7 +67,7 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         }
         viewModel.isError.observe(viewLifecycleOwner){ it ->
             if(it){
-                view?.let { Snackbar.make(requireView(), "There was an Error adding Item to the Cart", Snackbar.LENGTH_LONG).show() }
+                view?.let { Snackbar.make(requireView(), R.string.error_adding_to_cart, Snackbar.LENGTH_LONG).show() }
             }
         }
     }

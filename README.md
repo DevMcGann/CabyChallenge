@@ -27,4 +27,11 @@ About testing... Im no expert on this,  just had some experience with Mockito fo
 with Jetpack Compose (But used a very very custom implementation of my previous job).  
 I tried to do testing on this project,  but i have some dependency problem with Mockito which i cant find any solution just yet.  (not even ChatGpt hehe) 
 
+this should / could be the desired path for acquire offers and fixed prices and other info 
+<img width="1082" alt="Captura de Pantalla 2023-03-27 a la(s) 21 55 40" src="https://user-images.githubusercontent.com/32915926/228099368-aa33585b-8ff5-465e-801d-d419c1493d4f.png">
+
+But this is basically what i did on this challenge without a propper backend
+
+<img width="1048" alt="Captura de Pantalla 2023-03-27 a la(s) 21 56 03" src="https://user-images.githubusercontent.com/32915926/228099415-c5d7ccec-a4c5-4428-9869-19ada40b5698.png">
+
 

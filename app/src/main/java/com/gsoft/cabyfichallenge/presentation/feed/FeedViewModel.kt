@@ -26,7 +26,6 @@ class FeedViewModel @Inject constructor(
 
     val isLoading = MutableLiveData<Boolean>()
     val isError = MutableLiveData<Boolean>()
-    val errorMessage = MutableLiveData<String>("")
 
 
     init {

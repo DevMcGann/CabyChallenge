@@ -1,10 +1,9 @@
 package com.gsoft.cabyfichallenge.domain.dao
 
-import androidx.lifecycle.LiveData
+
 import androidx.room.*
 import com.gsoft.cabyfichallenge.domain.entity.CartItemCount
 import com.gsoft.cabyfichallenge.domain.entity.CartItemDB
-import com.gsoft.cabyfichallenge.util.Resource
 import kotlinx.coroutines.flow.Flow
 
 @Dao

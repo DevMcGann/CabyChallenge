@@ -1,10 +1,7 @@
 package com.gsoft.cabyfichallenge.data.repository
 
-import androidx.lifecycle.LiveData
 import com.gsoft.cabyfichallenge.data.datasource.remote.ProductApi
-import com.gsoft.cabyfichallenge.data.model.Product
 import com.gsoft.cabyfichallenge.data.model.ProductsResponse
-import com.gsoft.cabyfichallenge.domain.ProductMapper
 import com.gsoft.cabyfichallenge.domain.dao.CartItemDao
 import com.gsoft.cabyfichallenge.domain.entity.CartItemCount
 import com.gsoft.cabyfichallenge.domain.entity.CartItemDB

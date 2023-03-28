@@ -15,12 +15,13 @@
     <string name="kotlin_tshirt">Kotlin Tshirt</string>
     <string name="payment_success">Payment done successfully</string>
     <string name="total_amount">TOTAL $%1$s€</string>
-    <string name="error_adding_to_cart">There was an Error adding Item to the Cart</string>
+    <string name="success_adding_to_cart">Product Added to Cart</string>
     <string name="deleteitembutton">deleteItemButton</string>
     <string name="x_120">X 120</string>
     <string name="product_image">product image</string>
     <string name="delete">Delete</string>
     <string name="buy_items">Buy Items</string>
     <string name="total_100">$ 100</string>
+    <string name="error_adding_to_cart">Error adding product to Cart</string>
 
 </resources>

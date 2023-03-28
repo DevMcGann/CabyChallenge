@@ -90,7 +90,7 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
                 is Resource.Failure -> {
                     handleLoading(false)
                     val exception = resource.exception
-                    view?.let { Snackbar.make(it, exception.message.toString(), Snackbar.LENGTH_SHORT) }?.show()
+                    view?.let { Snackbar.make(it, exception.message.toString(), Snackbar.LENGTH_LONG) }?.show()
 
                 }
             }

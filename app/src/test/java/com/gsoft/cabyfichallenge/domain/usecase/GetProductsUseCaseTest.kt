@@ -1,36 +1,64 @@
+
 package com.gsoft.cabyfichallenge.domain.usecase
 
 import com.gsoft.cabyfichallenge.data.model.Product
 import com.gsoft.cabyfichallenge.data.model.ProductsResponse
 import com.gsoft.cabyfichallenge.domain.repository.ProductRepository
 import com.gsoft.cabyfichallenge.util.Resource
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.`when`
+import io.mockk.MockKAnnotations
+import io.mockk.coEvery
+import io.mockk.coVerify
+import io.mockk.impl.annotations.RelaxedMockK
+import kotlinx.coroutines.runBlocking
+import org.junit.Before
+import org.junit.Test
 
 
 class GetProductsUseCaseTest {
-    private lateinit var useCase: GetProductsUseCase
-    private val repository: ProductRepository = mock(ProductRepository::class.java)
-    private val prod: Product = mock(Product::class.java)
+    @RelaxedMockK
+    private lateinit var repository: ProductRepository
 
-    @BeforeEach
-    fun setUp() {
-        useCase = GetProductsUseCase(repository)
+     lateinit var useCase: GetProductsUseCase
+
+     @Before
+     fun onBefore(){
+         MockKAnnotations.init(this)
+         useCase = GetProductsUseCase(repository)
+     }
+
+    @Test
+    fun `get products fro API success`() = runBlocking {
+        //Given
+        val product = Product(code = "VOUCHER", name = "any", price = 1.1)
+        val myList = Resource.Success(ProductsResponse(listOf(product, product)))
+        coEvery { repository.getFeedContent() } returns myList
+
+        //When
+        val sut = useCase()
+
+        //Then
+        coVerify(exactly = 1) { repository.getFeedContent() }
+        assert(sut == myList)
     }
 
     @Test
-    suspend fun `test invoke() returns Success`() {
-        val response = Resource.Success(ProductsResponse(products = listOf(prod)))
-        `when`(repository.getFeedContent()).thenReturn(response)
-        try {
-            val result = useCase.invoke()
-            Assertions.assertEquals(result, response)
-        }catch (e: Exception){
-            Assertions.fail("Error occurred: ${e.message}")
-        }
+    fun `get products fro API failure`() = runBlocking {
+        //Given
+        val exception = Resource.Failure(Exception())
+        coEvery { repository.getFeedContent() } returns exception
 
+        //When
+        val sut = useCase()
+
+        //Then
+        coVerify(exactly = 1) { repository.getFeedContent() }
+        assert(sut == exception)
     }
+
+
+
+
+
+
 }
+

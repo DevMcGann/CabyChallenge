@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class GetProductsUseCase  @Inject constructor(
     private val productRepository: ProductRepository) {
-    suspend fun invoke() : Resource<ProductsResponse> {
+    suspend operator fun invoke() : Resource<ProductsResponse> {
         return  productRepository.getFeedContent()
     }
 }

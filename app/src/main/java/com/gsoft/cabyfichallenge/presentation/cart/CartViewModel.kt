@@ -86,7 +86,12 @@ class CartViewModel @Inject constructor(
     fun simulatePayment(){
         viewModelScope.launch {
             _payment.value = Resource.Loading
-            _payment.value = checkoutUseCase.invoke()
+            try {
+                _payment.value = checkoutUseCase.invoke()
+            }catch (e:Exception){
+                _payment.value = Resource.Failure(e)
+            }
+
         }
     }
 

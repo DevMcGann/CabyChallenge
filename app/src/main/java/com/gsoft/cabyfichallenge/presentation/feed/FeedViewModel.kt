@@ -35,7 +35,12 @@ class FeedViewModel @Inject constructor(
     fun fetchProducts(){
         viewModelScope.launch {
             _products.value = Resource.Loading
-            _products.value = getProductsUseCase.invoke()
+            try {
+                _products.value = getProductsUseCase.invoke()
+            }catch (e:Exception){
+                _products.value = Resource.Failure(e)
+            }
+
         }
     }
 

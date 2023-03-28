@@ -6,7 +6,7 @@ import com.gsoft.cabyfichallenge.data.repository.ProductRepositoryImpl
 import com.gsoft.cabyfichallenge.domain.dao.CartItemDao
 import com.gsoft.cabyfichallenge.domain.repository.CheckoutRepository
 import com.gsoft.cabyfichallenge.domain.repository.ProductRepository
-import com.gsoft.cabyfichallenge.domain.useCase.*
+import com.gsoft.cabyfichallenge.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

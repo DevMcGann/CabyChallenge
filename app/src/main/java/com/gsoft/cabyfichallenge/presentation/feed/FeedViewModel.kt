@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.gsoft.cabyfichallenge.data.model.Product
 import com.gsoft.cabyfichallenge.data.model.ProductsResponse
 import com.gsoft.cabyfichallenge.domain.ProductMapper
-import com.gsoft.cabyfichallenge.domain.useCase.GetProductsUseCase
-import com.gsoft.cabyfichallenge.domain.useCase.SaveProductsAsCartItemUseCase
+import com.gsoft.cabyfichallenge.domain.usecase.GetProductsUseCase
+import com.gsoft.cabyfichallenge.domain.usecase.SaveProductsAsCartItemUseCase
 import com.gsoft.cabyfichallenge.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

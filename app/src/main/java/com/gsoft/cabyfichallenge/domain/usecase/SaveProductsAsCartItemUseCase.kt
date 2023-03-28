@@ -1,4 +1,4 @@
-package com.gsoft.cabyfichallenge.domain.useCase
+package com.gsoft.cabyfichallenge.domain.usecase
 
 import com.gsoft.cabyfichallenge.domain.entity.CartItemDB
 import com.gsoft.cabyfichallenge.domain.repository.ProductRepository

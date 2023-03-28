@@ -1,4 +1,4 @@
-package com.gsoft.cabyfichallenge.domain.useCase
+package com.gsoft.cabyfichallenge.domain.usecase
 
 import com.gsoft.cabyfichallenge.data.model.PaymentResponse
 import com.gsoft.cabyfichallenge.domain.repository.CheckoutRepository

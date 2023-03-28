@@ -4,7 +4,7 @@ import androidx.lifecycle.*
 import com.gsoft.cabyfichallenge.data.datasource.local.CalculatePrice
 import com.gsoft.cabyfichallenge.data.model.PaymentResponse
 import com.gsoft.cabyfichallenge.domain.entity.CartItemCount
-import com.gsoft.cabyfichallenge.domain.useCase.*
+import com.gsoft.cabyfichallenge.domain.usecase.*
 import com.gsoft.cabyfichallenge.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay

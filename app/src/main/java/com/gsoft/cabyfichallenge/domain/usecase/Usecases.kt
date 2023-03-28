@@ -1,4 +1,4 @@
-package com.gsoft.cabyfichallenge.domain.useCase
+package com.gsoft.cabyfichallenge.domain.usecase
 
 data class Usecases(
     val getProductsUseCase: GetProductsUseCase,
